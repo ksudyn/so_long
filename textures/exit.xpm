@@ -1,0 +1,51 @@
+/*XPM*/
+static char *exit[] =
+{
+/* columnas, filas, numeros de colores, caracteres por pixel */
+"40 40 4 1 ",
+"  c black",            /* espacio( )-color(c)-y el color*/
+". c #A0522D",          /* punto(.)-color(c)-y el color(Marron mas claro)*/
+"X c #4B2E2E",          /* la (X)-color(c)-y el color(Marron muy oscuro) */
+"O c #FFFF00",          /* la (O)-color(c)-y el color(Amarillo) */
+/* Ahora se crean los pixels y tiene que coincidir el tamaño de 40 por 40 pixels  */
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"          XXXXXXXXXXXXXXXXXXXX          ",
+"          X..................X          ",
+"          X..................X          ",
+"          X..XXXXXXXXXXXXXX..X          ",
+"          X..X............X..X          ",
+"          X..X............X..X          ",
+"          X..X.....XX.....X..X          ",
+"          X..X.....XX.....X..X          ",
+"          X..X............X..X          ",
+"          X..X............X..X          ",
+"          X..XXXXXXXXXXXXXX..X          ",
+"          X..............OO..X          ",
+"          X..............OO..X          ",
+"          X..XXXXXXXXXXXXXX..X          ",
+"          X..X............X..X          ",
+"          X..X............X..X          ",
+"          X..X.....XX.....X..X          ",
+"          X..X.....XX.....X..X          ",
+"          X..X............X..X          ",
+"          X..X............X..X          ",
+"          X..XXXXXXXXXXXXXX..X          ",
+"          X..................X          ",
+"          X..................X          ",
+"          XXXXXXXXXXXXXXXXXXXX          ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        "
+};

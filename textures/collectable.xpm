@@ -1,0 +1,50 @@
+/* XPM */
+static char *collectible[] = 
+{
+/* columnas, filas, numeros de colores, caracteres por pixel */
+"40 40 3 1 ",
+"  c black",   /* espacio( )-color(c)-y el color*/
+". c red",   /* punto(.)-color(c)-y el color*/
+"X c white", /* la (X)-color(c)-y el color*/
+/* Ahora se crean los pixels y tiene que coincidir el tamaño de 40 por 40 pixels */
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                XXXXXXX                 ",
+"             XXXXXXXXXXXXX              ",
+"           XXXXXXXXXXXXXXXXX            ",
+"          XXXXXXXXXXXXXXXXXXX           ",
+"         XXXXXXXXXXXXXXXXXXXXX          ",
+"        XXXXXXXXXXXXXXXXXXXXXXX         ",
+"       XXXXXXXXXXX...XXXXXXXXXXX        ",
+"       XXXXXXXXXX.....XXXXXXXXXX        ",
+"      XXXXXXXXXXX.....XXXXXXXXXXX       ",
+"      XXXXXXXXXXX.....XXXXXXXXXXX       ",
+"      XXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"     XXXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"      XXXXXXXXXXX.....XXXXXXXXXXXX      ",
+"      XXXXXXXXXXX.....XXXXXXXXXXX       ",
+"      XXXXXXXXXXX.....XXXXXXXXXXX       ",
+"       XXXXXXXXXX.....XXXXXXXXXX        ",
+"       XXXXXXXXXX.....XXXXXXXXXX        ",
+"        XXXXXXXXXX...XXXXXXXXXX         ",
+"         XXXXXXXXXXXXXXXXXXXXX          ",
+"          XXXXXXXXXXXXXXXXXXX           ",
+"           XXXXXXXXXXXXXXXXX            ",
+"             XXXXXXXXXXXXX              ",
+"                XXXXXXX                 ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        "
+};
