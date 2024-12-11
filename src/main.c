@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:37:55 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/11/25 20:38:03 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/11 17:08:06 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	write(1, "Archivo recibido: ", 18);
 	write(1, argv[1], strlen(argv[1]));
 	write(1, "\n", 1);
-	
 	ft_reset_data(&game);
 	init_game(&game, argv[1]);
 	draw_map(&game);

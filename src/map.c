@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:24:29 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/11/25 20:45:13 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/11 16:52:44 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_free_map(char **map)
 
 	if (!map)
 		return ;
-	i = 0;
+	i = (0);
 	while (map[i])
 	{
 		free(map[i]);
@@ -38,26 +38,25 @@ char	**read_map_lines(int fd, t_game *game)
 	while ((line = get_next_line(fd)))
 	{
 		if (!dimensions(line, &map, &height, game))
-			return NULL;
+			return (NULL);
 	}
 	game->height = height;
-	return map;
+	return (map);
 }
 
-char **load_map(const char *file, t_game *game)
+char	**load_map(const char *file, t_game *game)
 {
-	int fd;
+	int	fd;
+	char	**map;
 
-	fd = open(file, O_RDONLY); 
+	fd = open(file, O_RDONLY);
 	if (fd == -1)
 		return (perror("Error al abrir el archivo"), NULL);
-
-	char **map = read_map_lines(fd, game);
+	map = read_map_lines(fd, game);
 	close(fd);
-
 	if (!map)
 		ft_putstr_fd("Error: el mapa está vacío o inválido\n", 2);
-	return map;
+	return (map);
 }
 
 void	draw_map(t_game *game)
@@ -66,9 +65,7 @@ void	draw_map(t_game *game)
 	int	y;
 
 	mlx_clear_window(game->mlx, game->win);
-	
 	y = 0;
-	
 	while (y < game->height)
 	{
 		x = 0;

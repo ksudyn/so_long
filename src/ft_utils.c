@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:40:39 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/02 14:40:44 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/11 17:23:17 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	draw_tile(char tile, void *mlx, void *mlx_win, int x, int y)
 	else if (tile == 'E')
 		draw_image(mlx, mlx_win, exit_img, x * CELL_SIZE, y * CELL_SIZE);
 	else if (tile == 'P')
-        draw_image(mlx, mlx_win, player_img, x * CELL_SIZE, y * CELL_SIZE);
-	
-	if (!player_img || !exit_img || !collectable_img || !nothing_img || !wall_img)
-        {
-            write(2, "Error: _img es NULL\n", 20);
-            exit(EXIT_FAILURE);
-        }
+		draw_image(mlx, mlx_win, player_img, x * CELL_SIZE, y * CELL_SIZE);
+	if (!player_img || !exit_img || !collectable_img
+		|| !nothing_img || !wall_img)
+	{
+		write(2, "Error: _img es NULL\n", 20);
+		exit(EXIT_FAILURE);
+	}
 }
 
 char	*ft_strcpy(char *s1, char *s2)

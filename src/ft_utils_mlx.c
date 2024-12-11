@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:23:02 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/11/25 18:59:51 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/11 17:12:47 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	star_mlx(void **mlx, void **window, int map_width, int map_height)
 	if (*mlx == NULL)
 		exit(ft_error("Error: No se pudo inicializar mlx.\n"));
 	*window = mlx_new_window(
-		*mlx, map_width * CELL_SIZE, map_height * CELL_SIZE, "Mi ventana");
+			*mlx, map_width * CELL_SIZE, map_height * CELL_SIZE, "Mi ventana");
 	if (*window == NULL)
 	{
 		free(*mlx);

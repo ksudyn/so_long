@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:01:53 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/11/25 18:58:58 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/11 17:06:51 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_load_img(void *mlx)
 	nothing_img = load_graphics(mlx, NOTHING);
 	player_img = load_graphics(mlx, PLAYER);
 	wall_img = load_graphics(mlx, WALL);
-
-	if(!collectable_img || !exit_img || !nothing_img || !player_img || !wall_img)
+	if (!collectable_img || !exit_img || !nothing_img
+		|| !player_img || !wall_img)
 	{
 		ft_putstr_fd("Error: F al leer las imagenes.\n", 2);
 		exit(EXIT_FAILURE);
