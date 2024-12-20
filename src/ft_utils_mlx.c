@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:23:02 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/20 16:06:59 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/20 16:18:05 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	star_mlx(void **mlx, void **window, int map_width, int map_height)
 
 void	*load_graphics(void *mlx, const char *image_path)
 {
-	int	height;
-	int	width;
+	int		height;
+	int		width;
 	void	*image;
 
 	if (!mlx || !image_path)

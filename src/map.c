@@ -31,14 +31,16 @@ char	**read_map_lines(int fd, t_game *game)
 {
 	char	*line;
 	char	**map;
-	int	height;
+	int		height;
 
 	map = NULL;
 	height = 0;
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line)
 	{
 		if (!dimensions(line, &map, &height, game))
 			return (NULL);
+		line = get_next_line(fd);
 	}
 	game->height = height;
 	return (map);
@@ -46,7 +48,7 @@ char	**read_map_lines(int fd, t_game *game)
 
 char	**load_map(const char *file, t_game *game)
 {
-	int	fd;
+	int		fd;
 	char	**map;
 
 	fd = open(file, O_RDONLY);
