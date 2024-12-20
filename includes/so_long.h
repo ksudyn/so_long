@@ -47,12 +47,14 @@
 //le estás diciendo al compilador que estas variables existen,
 //pero su definición (es decir, donde se les asigna memoria y valores)
 //está en algún otro archivo .c
-extern void *mlx;
-extern void	*collectable_img;
-extern void *exit_img;
-extern void *nothing_img;
-extern void *player_img;
-extern void *wall_img;
+typedef struct s_images
+{
+    void *wall_img;
+    void *nothing_img;
+    void *collectable_img;
+    void *exit_img;
+    void *player_img;
+}   t_images;
 
 typedef struct s_game
 //Define una estructura para almacenar los datos necesarios del juego
@@ -73,6 +75,7 @@ typedef struct s_game
 	int player_count;
     int exit_count;
     int collectable_count;
+	t_images images;
 }	t_game;
 
 //prototitpos.c
@@ -88,10 +91,10 @@ int     ft_press_key(int keycode, t_game *game);
 //ft_utils_mlx.c
 void 	star_mlx(void **mlx, void **window, int map_width, int map_height);
 void	*load_graphics(void *mlx, const char *image_path);
-void	draw_image(void *mlx, void *window, void *image, int x, int y);
-void	ft_free_img(void *mlx);
+void	draw_image(t_game *game, void *image, int x, int y);
+void	ft_free_img(void *mlx, t_images *images);
 //ft_utils.c
-void	draw_tile(char tile, void *mlx, void *mlx_win, int x, int y);
+void	draw_tile(t_game *game, char tile, int x, int y);
 char	*ft_strcpy(char *s1, char *s2);
 int		ft_strcmpr(char *s1, char *s2);
 void	ft_write_itoa(unsigned int n);
@@ -104,7 +107,7 @@ char	**read_map_lines(int fd, t_game *game);
 char	**load_map(const char *file, t_game *game);
 void	draw_map(t_game *game);
 //so_lon.c
-void	ft_load_img(void *mlx);
+void	ft_load_img(void *mlx, t_images *images);
 void	ft_reset_data(t_game *game);
 //star_close_game.c
 void init_game(t_game *game, char *map_file);

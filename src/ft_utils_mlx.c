@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:23:02 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/11 17:12:47 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/20 16:06:59 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	star_mlx(void **mlx, void **window, int map_width, int map_height)
 
 void	*load_graphics(void *mlx, const char *image_path)
 {
-	int	width;
 	int	height;
+	int	width;
 	void	*image;
 
 	if (!mlx || !image_path)
@@ -42,28 +42,33 @@ void	*load_graphics(void *mlx, const char *image_path)
 	return (image);
 }
 
-void	draw_image(void *mlx, void *window, void *image, int x, int y)
+void	draw_image(t_game *game, void *image, int x, int y)
 {
-	if (!mlx || !window || !image)
+	int	x_pos;
+	int	y_pos;
+
+	if (!game->mlx || !game->win || !image)
 	{
 		ft_error("Error: Parámetros inválidos en draw_image.\n");
 		return ;
 	}
-	mlx_put_image_to_window(mlx, window, image, x, y);
+	x_pos = x * CELL_SIZE;
+	y_pos = y * CELL_SIZE;
+	mlx_put_image_to_window(game->mlx, game->win, image, x_pos, y_pos);
 }
 
-void	ft_free_img(void *mlx)
+void	ft_free_img(void *mlx, t_images *images)
 {
-	if (!mlx)
+	if (!mlx || !images)
 		return ;
-	if (collectable_img)
-		mlx_destroy_image(mlx, collectable_img);
-	if (exit_img)
-		mlx_destroy_image(mlx, exit_img);
-	if (nothing_img)
-		mlx_destroy_image(mlx, nothing_img);
-	if (player_img)
-		mlx_destroy_image(mlx, player_img);
-	if (wall_img)
-		mlx_destroy_image(mlx, wall_img);
+	if (images->collectable_img)
+		mlx_destroy_image(mlx, images->collectable_img);
+	if (images->exit_img)
+		mlx_destroy_image(mlx, images->exit_img);
+	if (images->nothing_img)
+		mlx_destroy_image(mlx, images->nothing_img);
+	if (images->player_img)
+		mlx_destroy_image(mlx, images->player_img);
+	if (images->wall_img)
+		mlx_destroy_image(mlx, images->wall_img);
 }

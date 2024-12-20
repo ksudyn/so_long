@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:24:29 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/11 16:52:44 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/20 15:35:46 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	draw_map(t_game *game)
 	int	x;
 	int	y;
 
+	if (!game || !game->mlx || !game->win)
+		return ;
 	mlx_clear_window(game->mlx, game->win);
 	y = 0;
 	while (y < game->height)
@@ -71,7 +73,7 @@ void	draw_map(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			draw_tile(game->map[y][x], game->mlx, game->win, x, y);
+			draw_tile(game, game->map[y][x], x, y);
 			x++;
 		}
 		y++;

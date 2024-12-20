@@ -6,28 +6,31 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:40:39 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/11 17:23:17 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/20 15:31:28 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	draw_tile(char tile, void *mlx, void *mlx_win, int x, int y)
+void	draw_tile(t_game *game, char tile, int x, int y)
 {
+	t_images	*imgs;
+
+	imgs = &game->images;
 	if (tile == '1')
-		draw_image(mlx, mlx_win, wall_img, x * CELL_SIZE, y * CELL_SIZE);
+		draw_image(game, imgs->wall_img, x, y);
 	else if (tile == '0')
-		draw_image(mlx, mlx_win, nothing_img, x * CELL_SIZE, y * CELL_SIZE);
+		draw_image(game, imgs->nothing_img, x, y);
 	else if (tile == 'C')
-		draw_image(mlx, mlx_win, collectable_img, x * CELL_SIZE, y * CELL_SIZE);
+		draw_image(game, imgs->collectable_img, x, y);
 	else if (tile == 'E')
-		draw_image(mlx, mlx_win, exit_img, x * CELL_SIZE, y * CELL_SIZE);
+		draw_image(game, imgs->exit_img, x, y);
 	else if (tile == 'P')
-		draw_image(mlx, mlx_win, player_img, x * CELL_SIZE, y * CELL_SIZE);
-	if (!player_img || !exit_img || !collectable_img
-		|| !nothing_img || !wall_img)
+		draw_image(game, imgs->player_img, x, y);
+	if (!imgs->player_img || !imgs->exit_img || !imgs->collectable_img
+		|| !imgs->nothing_img || !imgs->wall_img)
 	{
-		write(2, "Error: _img es NULL\n", 20);
+		write(2, "Error: Una o más imágenes son NULL\n", 34);
 		exit(EXIT_FAILURE);
 	}
 }
