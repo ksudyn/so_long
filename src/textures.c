@@ -108,7 +108,7 @@ void	component(t_game *game)
 		ft_putstr_fd("Error: No hay o hay mas de una salida\n", 1);
 		exit(1);
 	}
-	if (game->collectable_count < 1)
+	if (game->count < 1)
 	{
 		ft_putstr_fd("Error: Mínimo un objeto coleccionable\n", 1);
 		exit(1);

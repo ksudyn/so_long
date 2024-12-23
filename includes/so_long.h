@@ -63,7 +63,6 @@ typedef struct s_game
 	int				exit_y;
 	int				player_count;
 	int				exit_count;
-	int				collectable_count;
 	unsigned int	step;
 	t_images		images;
 }	t_game;
