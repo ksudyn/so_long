@@ -6,7 +6,7 @@
 /*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:45:30 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/20 17:09:07 by ksudyn           ###   ########.fr       */
+/*   Updated: 2024/12/23 14:12:58 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,22 @@ typedef struct s_images
 
 typedef struct s_game
 {
-	int		height;
-	int		width;
-	int		x;
-	int		y;
-	int		count;
-	int		finish;
-	void	*mlx;
-	void	*win;
-	char	**map;
-	int		exit_x;
-	int		exit_y;
-	int		player_count;
-	int		exit_count;
-	int		collectable_count;
+	int				height;
+	int				width;
+	int				x;
+	int				y;
+	int				count;
+	int				finish;
+	void			*mlx;
+	void			*win;
+	char			**map;
+	int				exit_x;
+	int				exit_y;
+	int				player_count;
+	int				exit_count;
+	int				collectable_count;
 	unsigned int	step;
-	t_images	images;
+	t_images		images;
 }	t_game;
 
 //accesible.c

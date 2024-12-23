@@ -14,7 +14,7 @@
 NAME = so_long
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address,leak
 
 # Rutas
 LIBFT_DIR = ./libft
