@@ -14,7 +14,6 @@
 
 void	move_w(t_game *game)
 {
-	printf("game->y antes de mover: %d\n", game->y);
 	if (game->y > 0)
 	{
 		if (game->map[game->y - 1][game->x] != '1'
@@ -40,7 +39,6 @@ void	move_w(t_game *game)
 
 void	move_s(t_game *game)
 {
-	printf("game->y antes de mover: %d\n", game->y);
 	if (game->y < game->height - 1)
 	{
 		if (game->map[game->y + 1][game->x] != '1'
@@ -66,7 +64,6 @@ void	move_s(t_game *game)
 
 void	move_d(t_game *game)
 {
-	printf("game->y antes de mover: %d\n", game->y);
 	if (game->x < game->width - 1)
 	{
 		if (game->map[game->y][game->x + 1] != '1'
@@ -92,7 +89,6 @@ void	move_d(t_game *game)
 
 void	move_a(t_game *game)
 {
-	printf("game->y antes de mover: %d\n", game->y);
 	if (game->x > 0)
 	{
 		if (game->map[game->y][game->x - 1] != '1'

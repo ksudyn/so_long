@@ -104,3 +104,14 @@ int	accessible(t_game *game)
 	free_map_copy(map_copy, game);
 	return (1);
 }
+//Estas funciones están diseñadas para trabajar con un mapa del juego,
+//verificar si la salida y los consumibles son accesibles, y gestionar la memoria correctamente.
+//Cada función maneja diferentes aspectos del proceso,
+//desde la creación de la copia del mapa hasta la validación de accesibilidad y la liberación de memoria.
+
+
+
+
+
+
+

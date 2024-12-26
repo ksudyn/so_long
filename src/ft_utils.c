@@ -63,7 +63,7 @@ void	ft_write_itoa(unsigned int n)
 {
 	char	*str;
 
-	write(1, "STEP_: ", 7);
+	write(1, "STEP: ", 6);
 	str = ft_itoa(n);
 	if (str)
 	{
