@@ -33,6 +33,7 @@ SRCS = src/so_long.c \
 	   src/dimension.c\
 	   src/flood_fill.c\
 	   src/accessible.c\
+	   src/draw.c\
 
 # Archivos objeto
 OBJS = $(SRCS:.c=.o)

@@ -18,6 +18,13 @@
 # define NOTHING "./textures/nothing.xpm"
 # define PLAYER "./textures/player.xpm"
 # define WALL "./textures/wall.xpm"
+# define WALL_CORNER_TOP_LEFT "./textures/wall_corner_top_left.xpm"
+# define WALL_CORNER_TOP_RIGHT "./textures/wall_corner_top_right.xpm"
+# define WALL_CORNER_BOTTOM_LEFT "./textures/wall_corner_bottom_left.xpm"
+# define WALL_CORNER_BOTTOM_RIGHT "./textures/wall_corner_bottom_right.xpm"
+# define WALL_HORIZONTAL "./textures/wall_horizontal.xpm"
+# define WALL_VERTICAL "./textures/wall_vertical.xpm"
+
 
 /*estos numeros se sacan teniendo en cuenta el sistema X11
  *para gestionar la entrada del teclado
@@ -42,6 +49,12 @@
 typedef struct s_images
 {
 	void	*wall_img;
+	void	*wall_corner_top_left;
+	void	*wall_corner_top_right;
+	void	*wall_corner_bottom_left;
+	void	*wall_corner_bottom_right;
+	void	*wall_horizontal;
+	void	*wall_vertical;
 	void	*nothing_img;
 	void	*collectable_img;
 	void	*exit_img;

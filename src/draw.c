@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "so_long.h"
+/*
 void	draw_wall(t_game *game, int x, int y)
 {
 	t_images	*imgs;
@@ -20,21 +21,21 @@ void	draw_wall(t_game *game, int x, int y)
 	// Comprobar si es una esquina
 	if (x == 0 && y == 0)
 		draw_image(game, imgs->wall_corner_top_left, x, y);
-	else if (x == game->map_width - 1 && y == 0)
+	else if (x == game->width - 1 && y == 0)
 		draw_image(game, imgs->wall_corner_top_right, x, y);
-	else if (x == 0 && y == game->map_height - 1)
+	else if (x == 0 && y == game->height - 1)
 		draw_image(game, imgs->wall_corner_bottom_left, x, y);
-	else if (x == game->map_width - 1 && y == game->map_height - 1)
+	else if (x == game->width - 1 && y == game->height - 1)
 		draw_image(game, imgs->wall_corner_bottom_right, x, y);
 
 	// Comprobar si es un borde
 	else if (y == 0)
 		draw_image(game, imgs->wall_horizontal, x, y); // Borde superior
-	else if (y == game->map_height - 1)
+	else if (y == game->height - 1)
 		draw_image(game, imgs->wall_horizontal, x, y); // Borde inferior
 	else if (x == 0)
 		draw_image(game, imgs->wall_vertical, x, y);   // Borde izquierdo
-	else if (x == game->map_width - 1)
+	else if (x == game->width - 1)
 		draw_image(game, imgs->wall_vertical, x, y);   // Borde derecho
 
 	// Cualquier otro muro interior
@@ -48,6 +49,17 @@ void	draw_tile(t_game *game, char tile, int x, int y)
 
 	imgs = &game->images;
 
+	// Verificar si alguna imagen es NULL antes de dibujar
+	if (!imgs->player_img || !imgs->exit_img || !imgs->collectable_img
+		|| !imgs->nothing_img || !imgs->wall_img
+		|| !imgs->wall_corner_top_left || !imgs->wall_corner_top_right
+		|| !imgs->wall_corner_bottom_left || !imgs->wall_corner_bottom_right
+		|| !imgs->wall_horizontal || !imgs->wall_vertical)
+	{
+		write(2, "Error: Una o más imágenes son NULL\n", 34);
+		exit(EXIT_FAILURE);
+	}
+
 	// Llamar a draw_wall para los muros
 	if (tile == '1')
 		draw_wall(game, x, y);
@@ -59,15 +71,5 @@ void	draw_tile(t_game *game, char tile, int x, int y)
 		draw_image(game, imgs->exit_img, x, y);
 	else if (tile == 'P')
 		draw_image(game, imgs->player_img, x, y);
+}*/
 
-	// Verificar si alguna imagen es NULL
-	if (!imgs->player_img || !imgs->exit_img || !imgs->collectable_img
-		|| !imgs->nothing_img || !imgs->wall_img
-		|| !imgs->wall_corner_top_left || !imgs->wall_corner_top_right
-		|| !imgs->wall_corner_bottom_left || !imgs->wall_corner_bottom_right
-		|| !imgs->wall_horizontal || !imgs->wall_vertical)
-	{
-		write(2, "Error: Una o más imágenes son NULL\n", 34);
-		exit(EXIT_FAILURE);
-	}
-}
