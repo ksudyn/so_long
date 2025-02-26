@@ -3,9 +3,9 @@ static	char *player[] =
 {
 /* columnas, filas, numeros de colores, caracteres por pixel */
 "40 40 3 1"
-"  c black"
-". c white"
-"X c blue"
+"  c #87CEEB"
+". c #4B0082"
+"X c white"
 /*Ahora se crean los pixels y tiene que coincidir el tamaño de 40 por 40 pixels */
 "                                        ",
 "                                        ",

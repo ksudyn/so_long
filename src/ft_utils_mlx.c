@@ -69,6 +69,19 @@ void	ft_free_img(void *mlx, t_images *images)
 		mlx_destroy_image(mlx, images->nothing_img);
 	if (images->player_img)
 		mlx_destroy_image(mlx, images->player_img);
+	// Liberar imágenes adicionales de muros
 	if (images->wall_img)
 		mlx_destroy_image(mlx, images->wall_img);
+	if (images->wall_corner_top_left)
+		mlx_destroy_image(mlx, images->wall_corner_top_left);
+	if (images->wall_corner_top_right)
+		mlx_destroy_image(mlx, images->wall_corner_top_right);
+	if (images->wall_corner_bottom_left)
+		mlx_destroy_image(mlx, images->wall_corner_bottom_left);
+	if (images->wall_corner_bottom_right)
+		mlx_destroy_image(mlx, images->wall_corner_bottom_right);
+	if (images->wall_horizontal)
+		mlx_destroy_image(mlx, images->wall_horizontal);
+	if (images->wall_vertical)
+		mlx_destroy_image(mlx, images->wall_vertical);
 }

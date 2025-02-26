@@ -18,13 +18,12 @@
 # define NOTHING "./textures/nothing.xpm"
 # define PLAYER "./textures/player.xpm"
 # define WALL "./textures/wall.xpm"
-# define WALL_CORNER_TOP_LEFT "./textures/wall_corner_top_left.xpm"
-# define WALL_CORNER_TOP_RIGHT "./textures/wall_corner_top_right.xpm"
-# define WALL_CORNER_BOTTOM_LEFT "./textures/wall_corner_bottom_left.xpm"
-# define WALL_CORNER_BOTTOM_RIGHT "./textures/wall_corner_bottom_right.xpm"
+# define WALL_CORNER_TOP_LEFT "./textures/wall_top_left.xpm"
+# define WALL_CORNER_TOP_RIGHT "./textures/wall_top_right.xpm"
+# define WALL_CORNER_BOTTOM_LEFT "./textures/wall_bottom_left.xpm"
+# define WALL_CORNER_BOTTOM_RIGHT "./textures/wall_bottom_right.xpm"
 # define WALL_HORIZONTAL "./textures/wall_horizontal.xpm"
 # define WALL_VERTICAL "./textures/wall_vertical.xpm"
-
 
 /*estos numeros se sacan teniendo en cuenta el sistema X11
  *para gestionar la entrada del teclado
@@ -84,6 +83,8 @@ typedef struct s_game
 int		accessible(t_game *game);
 //dimension.c
 int		dimensions(char *line, char ***map, int *height, t_game *game);
+//draw.c
+void	draw_tile(t_game *game, char tile, int x, int y);
 //flood_fill.c
 void	flood_fill(t_game *game, int x, int y, char **map_copy);
 void	validade_flood_fill(t_game *game);
@@ -95,7 +96,6 @@ void	*load_graphics(void *mlx, const char *image_path);
 void	draw_image(t_game *game, void *image, int x, int y);
 void	ft_free_img(void *mlx, t_images *images);
 //ft_utils.c
-void	draw_tile(t_game *game, char tile, int x, int y);
 char	*ft_strcpy(char *s1, char *s2);
 int		ft_strcmpr(char *s1, char *s2);
 void	ft_write_itoa(unsigned int n);

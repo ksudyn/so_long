@@ -3,7 +3,7 @@ static char *nothing[] =
 {
 /* columnas, filas, numeros de colores, caracteres por pixel */
 "40 40 1 1"
-"  c black"
+"  c #87CEEB"
 /*Ahora se crean los pixels y tiene que coincidir el tamaño de 40 por 40 pixels */
 "                                        ",
 "                                        ",

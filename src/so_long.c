@@ -19,10 +19,21 @@ void	ft_load_img(void *mlx, t_images *images)
 	images->nothing_img = load_graphics(mlx, NOTHING);
 	images->player_img = load_graphics(mlx, PLAYER);
 	images->wall_img = load_graphics(mlx, WALL);
+	// Cargar imágenes adicionales para muros
+	images->wall_corner_top_left = load_graphics(mlx, WALL_CORNER_TOP_LEFT);
+	images->wall_corner_top_right = load_graphics(mlx, WALL_CORNER_TOP_RIGHT);
+	images->wall_corner_bottom_left = load_graphics(mlx, WALL_CORNER_BOTTOM_LEFT);
+	images->wall_corner_bottom_right = load_graphics(mlx, WALL_CORNER_BOTTOM_RIGHT);
+	images->wall_horizontal = load_graphics(mlx, WALL_HORIZONTAL);
+	images->wall_vertical = load_graphics(mlx, WALL_VERTICAL);
+	// Verificación de errores
 	if (!images->collectable_img || !images->exit_img || !images->nothing_img
-		|| !images->player_img || !images->wall_img)
+		|| !images->player_img || !images->wall_img
+		|| !images->wall_corner_top_left || !images->wall_corner_top_right
+		|| !images->wall_corner_bottom_left || !images->wall_corner_bottom_right
+		|| !images->wall_horizontal || !images->wall_vertical)
 	{
-		ft_putstr_fd("Error: Fallo al leer las imágenes.\n", 2);
+		ft_putstr_fd("Error: Fallo al leer una o más imágenes.\n", 2);
 		exit(EXIT_FAILURE);
 	}
 }
