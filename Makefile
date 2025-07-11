@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:59 by ksudyn            #+#    #+#              #
-#    Updated: 2024/11/26 15:25:02 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/07/11 17:33:52 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = so_long
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address,leak
 
 # Rutas
 LIBFT_DIR = ./libft
