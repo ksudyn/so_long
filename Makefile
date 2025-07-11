@@ -6,9 +6,10 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:59 by ksudyn            #+#    #+#              #
-#    Updated: 2025/07/11 17:33:52 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/07/11 17:46:09 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 # Definiciones de variables
 NAME = so_long
@@ -46,11 +47,13 @@ LIBFT_LIB = $(LIBFT_DIR)/libft.a
 MLX_LIB = $(MLX_DIR)/libmlx.a
 
 # Incluir X11 y math para MiniLibX
-LIBS = -lX11 -lXext -lm
+LIBS = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
+
+all: $(NAME)
 
 # Regla para compilar el ejecutable
 $(NAME): $(OBJS) $(LIBFT_LIB) $(MLX_LIB)
-	$(CC) $(CFLAGS) -fPIE -o $(NAME) $(OBJS) $(LIBFT_LIB) $(MLX_LIB) $(LIBS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBS)
 
 # Regla para compilar los archivos objeto
 %.o: %.c
@@ -58,7 +61,7 @@ $(NAME): $(OBJS) $(LIBFT_LIB) $(MLX_LIB)
 
 # Regla para compilar la librería libft
 $(LIBFT_LIB):
-	make -C $(LIBFT_DIR) CFLAGS="-Wall -Wextra -Werror -fPIC"
+	make -C $(LIBFT_DIR)
 
 # Regla para compilar la biblioteca mlx
 $(MLX_LIB):

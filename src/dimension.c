@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dimension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:52:39 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/11 16:10:52 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/07/11 17:53:29 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	dimensions(char *line, char ***map, int *height, t_game *game)
 
 	if (!game->width)
 		initialize_width(line, game);
-	temp = ft_calloc(*height + 1, sizeof(char *));
+	temp = ft_calloc(*height + 2, sizeof(char *));
 	if (!temp)
 	{
 		handle_map_error(map, line);
