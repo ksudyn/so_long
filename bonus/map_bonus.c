@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 19:04:31 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 20:55:44 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/08/07 15:30:34 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/08/07 20:50:57 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long_bonus.h"
+
+void   draw_steps(t_game *game)
+{
+    char    *steps_str;
+    int     x;
+    int     y;
+
+    steps_str =ft_itoa(game->step);
+    if(!steps_str)
+        return ;
+    x = (game->width - 1) * CELL_SIZE;
+    y = (game->height - 1) * CELL_SIZE;
+    mlx_string_put(game->mlx, game->win, x, y, 0x4B0082, steps_str);
+    free(steps_str);
+}
 
 void	draw_wall(t_game *game, int x, int y)
 {
@@ -40,7 +55,7 @@ void	draw_wall(t_game *game, int x, int y)
 		draw_image(game, imgs->wall_img, x, y);
 }
 
-void	draw_tile(t_game *game, char tile, int x, int y)
+void	draw_tile_bonus(t_game *game, char tile, int x, int y)
 {
 	t_images	*imgs;
 
@@ -65,10 +80,10 @@ void	draw_tile(t_game *game, char tile, int x, int y)
 	else if (tile == 'E')
 		draw_image(game, imgs->exit_img, x, y);
 	else if (tile == 'P')
-		draw_image(game, imgs->player_img, x, y);
+		draw_image(game, game->player_texture, x, y);
 }
 
-void	draw_map(t_game *game)
+void	draw_map_bonus(t_game *game)
 {
 	int	x;
 	int	y;
@@ -82,9 +97,10 @@ void	draw_map(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			draw_tile(game, game->map[y][x], x, y);
+			draw_tile_bonus(game, game->map[y][x], x, y);
 			x++;
 		}
 		y++;
 	}
+	draw_steps(game);
 }

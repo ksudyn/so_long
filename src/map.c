@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:24:29 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/20 15:35:46 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/07 20:55:34 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,4 @@ char	**load_map(const char *file, t_game *game)
 	if (!map)
 		ft_putstr_fd("Error: el mapa está vacío o inválido\n", 2);
 	return (map);
-}
-
-void	draw_map(t_game *game)
-{
-	int	x;
-	int	y;
-
-	if (!game || !game->mlx || !game->win)
-		return ;
-	mlx_clear_window(game->mlx, game->win);
-	y = 0;
-	while (y < game->height)
-	{
-		x = 0;
-		while (x < game->width)
-		{
-			draw_tile(game, game->map[y][x], x, y);
-			x++;
-		}
-		y++;
-	}
 }

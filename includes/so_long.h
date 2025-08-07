@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:45:30 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/07/11 16:54:10 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/07 19:56:09 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ typedef struct s_images
 	void	*collectable_img;
 	void	*exit_img;
 	void	*player_img;
+	void	*player_up;
+	void	*player_down;
+	void	*player_left;
+	void	*player_right;
 }	t_images;
 
 typedef struct s_game
@@ -77,6 +81,7 @@ typedef struct s_game
 	int				exit_count;
 	unsigned int	step;
 	t_images		images;
+	void			*player_texture;
 }	t_game;
 
 //accesible.c

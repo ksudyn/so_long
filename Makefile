@@ -6,80 +6,86 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:59 by ksudyn            #+#    #+#              #
-#    Updated: 2025/07/11 17:46:09 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/08/07 20:44:07 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Definiciones de variables
 NAME = so_long
+BONUS = so_long_bonus
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -g
+INCLUDES = -I./includes -I./libft -I./minilibx-linux
 
 # Rutas
 LIBFT_DIR = ./libft
 MLX_DIR = ./minilibx-linux
-
-#(los archivos fuente.c)
-SRCS = src/so_long.c \
-       src/ft_utils_mlx.c \
-       src/main.c \
-       src/map.c \
-	   src/ft_move.c\
-	   src/ft_utils.c\
-	   src/start_close_game.c\
-	   src/textures.c\
-	   src/validate_map.c\
-	   src/dimension.c\
-	   src/flood_fill.c\
-	   src/accessible.c\
-	   src/draw.c\
-
-# Archivos objeto
-OBJS = $(SRCS:.c=.o)
-
-# Archivos de cabecera
-INCLUDES = -I./includes -I./libft -I./minilibx-linux
-
-# Rutas de las bibliotecas
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 MLX_LIB = $(MLX_DIR)/libmlx.a
-
-# Incluir X11 y math para MiniLibX
 LIBS = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
 
+# Archivos fuente compartidos
+SHARED_SRCS = \
+	src/so_long.c \
+	src/ft_utils_mlx.c \
+	src/map.c \
+	src/ft_utils.c \
+	src/start_close_game.c \
+	src/textures.c \
+	src/validate_map.c \
+	src/dimension.c \
+	src/flood_fill.c \
+	src/accessible.c \
+
+# Solo obligatorios
+MANDATORY_SRCS = \
+	src/main.c \
+	src/ft_move.c \
+	src/draw.c
+
+# Solo bonus
+BONUS_SRCS = \
+	bonus/main_bonus.c \
+	bonus/map_bonus.c \
+	bonus/move_bonus.c \
+	bonus/texture_bonus.c
+
+# Archivos objeto
+SHARED_OBJS = $(SHARED_SRCS:.c=.o)
+MANDATORY_OBJS = $(MANDATORY_SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
+# Targets
 all: $(NAME)
 
-# Regla para compilar el ejecutable
-$(NAME): $(OBJS) $(LIBFT_LIB) $(MLX_LIB)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBS)
+$(NAME): $(SHARED_OBJS) $(MANDATORY_OBJS) $(LIBFT_LIB) $(MLX_LIB)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-# Regla para compilar los archivos objeto
+bonus: $(BONUS)
+
+$(BONUS): $(SHARED_OBJS) $(BONUS_OBJS) $(LIBFT_LIB) $(MLX_LIB)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
 
-# Regla para compilar la librería libft
 $(LIBFT_LIB):
 	make -C $(LIBFT_DIR)
 
-# Regla para compilar la biblioteca mlx
 $(MLX_LIB):
 	make -C $(MLX_DIR)
 
-# Regla para limpiar archivos temporales
 clean:
-	rm -f $(OBJS)
+	rm -f $(SHARED_OBJS) $(MANDATORY_OBJS) $(BONUS_OBJS)
 	make clean -C $(LIBFT_DIR)
 	make clean -C $(MLX_DIR)
 
-# Regla para eliminar todos los archivos objeto y el ejecutable
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS)
 	make fclean -C $(LIBFT_DIR)
 
-# Regla para hacer un "make" limpio y luego compilar
-re: fclean $(NAME)
+re: fclean all
 
-# Regla para compilar la librería libft
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksudyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:51:16 by ksudyn            #+#    #+#             */
-/*   Updated: 2024/12/11 15:50:24 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/07 18:13:05 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	validade_flood_fill(t_game *game)
 		ft_error("Error: mapa no valido\n");
 		exit(1);
 	}
-	ft_putstr_fd("todo es accesible ", 1);
+	ft_putstr_fd("todo es accesible \n", 1);
 }
