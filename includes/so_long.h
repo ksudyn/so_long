@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:45:30 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 19:56:09 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/08 17:42:44 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 
+// typedef struct s_enemy
+// {
+// 	int	x;
+// 	int	y;
+// }	t_enemy;
+
 typedef struct s_images
 {
 	void	*wall_img;
@@ -62,6 +68,7 @@ typedef struct s_images
 	void	*player_down;
 	void	*player_left;
 	void	*player_right;
+	//void	*enemy_img;
 }	t_images;
 
 typedef struct s_game
@@ -82,6 +89,8 @@ typedef struct s_game
 	unsigned int	step;
 	t_images		images;
 	void			*player_texture;
+	// t_enemy			*enemies;     // array de enemigos
+	// int				num_enemies;   // cuántos hay
 }	t_game;
 
 //accesible.c

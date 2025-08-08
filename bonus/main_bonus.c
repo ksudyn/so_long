@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:56:19 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 20:47:19 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/08 17:07:11 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(int argc, char **argv)
 	write(1, "\n", 1);
 	ft_reset_data(&game);
 	init_game_bonus(&game, argv[1]);
-	draw_map_bonus(&game); // <-- FUNCION DEL BONUS
-	mlx_key_hook(game.win, ft_press_key_bonus, &game); // <-- FUNCION DEL BONUS
-	mlx_hook(game.win, 17, 0, close_game_bonus, &game); // Puedes usar la misma si no cambia
+	draw_map_bonus(&game);
+	mlx_key_hook(game.win, ft_press_key_bonus, &game);
+	mlx_hook(game.win, 17, 0, close_game_bonus, &game);
 	write(1, "Iniciando loop de MiniLibX (bonus)...\n", 38);
 	mlx_loop(game.mlx);
 	write(1, "Fin del loop de MiniLibX (bonus).\n", 34);

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:44:00 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 20:28:12 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/08 17:11:48 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	move_w_bonus(t_game *game);
 void	move_a_bonus(t_game *game);
 void	move_s_bonus(t_game *game);
 void	move_d_bonus(t_game *game);
-int	    ft_press_key_bonus(int keycode, t_game *game);
+int		ft_press_key_bonus(int keycode, t_game *game);
 // Versión bonus del dibujado
 void	draw_map_bonus(t_game *game);
 
 void	init_game_bonus(t_game *game, char *map_file);
-void    texture_bonus(void  *mlx,   t_game  *game);
-int	close_game_win_bonus(t_game *game);
-int	close_game_bonus(t_game *game);
+void	texture_bonus(void *mlx, t_game *game);
+int		close_game_win_bonus(t_game *game);
+int		close_game_bonus(t_game *game);
+void	ft_free_img_bonus(void *mlx, t_images *images);
 // Otras funciones específicas del bonus si agregas enemigos, animaciones...
 
 #endif
-

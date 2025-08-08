@@ -6,7 +6,7 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:59 by ksudyn            #+#    #+#              #
-#    Updated: 2025/08/07 20:44:07 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/08/08 17:10:34 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ BONUS_SRCS = \
 	bonus/main_bonus.c \
 	bonus/map_bonus.c \
 	bonus/move_bonus.c \
+	bonus/start_close_bonus.c\
 	bonus/texture_bonus.c
 
 # Archivos objeto

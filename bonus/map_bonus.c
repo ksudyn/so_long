@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:30:34 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 20:50:57 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/08 17:23:03 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	draw_tile_bonus(t_game *game, char tile, int x, int y)
 		write(2, "Error: Una o más imágenes son NULL\n", 34);
 		exit(EXIT_FAILURE);
 	}
-	// Llamar a draw_wall para los muros
 	if (tile == '1')
 		draw_wall(game, x, y);
 	else if (tile == '0')
@@ -81,6 +80,8 @@ void	draw_tile_bonus(t_game *game, char tile, int x, int y)
 		draw_image(game, imgs->exit_img, x, y);
 	else if (tile == 'P')
 		draw_image(game, game->player_texture, x, y);
+	//else if(tile == 'X')
+		//draw_image(game, imgs->enemy_img, x, y);
 }
 
 void	draw_map_bonus(t_game *game)
