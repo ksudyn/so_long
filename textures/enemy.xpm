@@ -1,0 +1,50 @@
+/* XPM */
+static char *enemy[] = {
+/* columns rows colors chars-per-pixel */
+"40 40 3 1",
+"  c #87CEEB",     /* Fondo igual que el del player */
+". c yellow",      /* Color principal de la estrella */
+"X c black",       /* Contorno de la estrella */
+/* pixels */
+"                                        ",
+"                                        ",
+"                                        ",
+"                                        ",
+"                    X                   ",
+"                   XXX                  ",
+"                  XXXXX                 ",
+"                 XXXXXXX                ",
+"               XXX.XXX.XXX              ",
+"                 XXXXXXX                ",
+"         XXXXXXXXX.XXX.XXXXXXXXX        ",
+"          XXXXXXX..XXX..XXXXXXX         ",
+"           XXXXX...XXX...XXXXX          ",
+"            XXXX...XXX...XXXX           ",
+"             XXX...XXX...XXX            ",
+"              XX...XXX...XX             ",
+"               X...XXX...X              ",
+"                ....X....               ",
+"                 ...X...                ",
+"                  ..X..                 ",
+"                   .X.                  ",
+"                   .X.                  ",
+"                  ..X..                 ",
+"                 ...X...                ",
+"                ....X....               ",
+"               X...XXX...X              ",
+"              XX...XXX...XX             ",
+"             XXX...XXX...XXX            ",
+"            XXXX...XXX...XXXX           ",
+"           XXXXX...XXX...XXXXX          ",
+"          XXXXXXX..XXX..XXXXXXX         ",
+"         XXXXXXXXX.XXX.XXXXXXXXX        ",
+"                 XXXXXXX                ",
+"               XXX.XXX.XXX              ",
+"                 XXXXXXX                ",
+"                  XXXXX                 ",
+"                   XXX                  ",
+"                    X                   ",
+"                                        ",
+"                                        ",
+"                                        "
+};

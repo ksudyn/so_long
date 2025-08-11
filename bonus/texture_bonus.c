@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:56:50 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/08 17:46:31 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/11 17:53:07 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    texture_bonus(void  *mlx, t_game  *game)
     imgs->player_down = load_graphics(mlx, "textures/player_down.xpm");
     imgs->player_left = load_graphics(mlx, "textures/player_left.xpm");
     imgs->player_right = load_graphics(mlx, "textures/player_right.xpm");
-    //imgs->enemy_img = load_graphics(mlx, "textures/enemy.xpm");
+    imgs->enemy_img = load_graphics(mlx, "textures/enemy.xpm");
 
     if(!imgs->player_up || !imgs->player_down || !imgs->player_left ||
         !imgs->player_right)
@@ -42,7 +42,7 @@ void ft_free_img_bonus(void *mlx, t_images *images)
         mlx_destroy_image(mlx, images->player_left);
     if(images->player_right)
         mlx_destroy_image(mlx, images->player_right);
-    // if (images->enemy_img)
-    // 	mlx_destroy_image(mlx, images->enemy_img);
+    if (images->enemy_img)
+    	mlx_destroy_image(mlx, images->enemy_img);
 
 }

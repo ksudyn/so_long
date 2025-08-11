@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:30:34 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/08 17:23:03 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/11 17:52:52 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	draw_tile_bonus(t_game *game, char tile, int x, int y)
 		draw_image(game, imgs->exit_img, x, y);
 	else if (tile == 'P')
 		draw_image(game, game->player_texture, x, y);
-	//else if(tile == 'X')
-		//draw_image(game, imgs->enemy_img, x, y);
+	else if(tile == 'X')
+		draw_image(game, imgs->enemy_img, x, y);
 }
 
 void	draw_map_bonus(t_game *game)

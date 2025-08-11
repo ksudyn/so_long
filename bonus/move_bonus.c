@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:29:02 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/07 20:26:17 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/08/11 18:12:30 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	move_w_bonus(t_game *game)
 {
 	if (game->y > 0)
 	{
+		check_enemy_collision(game, game->y - 1, game->x);
 		if (game->map[game->y - 1][game->x] != '1'
 		&& game->map[game->y - 1][game->x] != 'E')
 		{
@@ -40,6 +41,7 @@ void	move_s_bonus(t_game *game)
 {
 	if (game->y < game->height - 1)
 	{
+		check_enemy_collision(game, game->y + 1, game->x);
 		if (game->map[game->y + 1][game->x] != '1'
 		&& game->map[game->y + 1][game->x] != 'E')
 		{
@@ -64,6 +66,7 @@ void	move_d_bonus(t_game *game)
 {
 	if (game->x < game->width - 1)
 	{
+		check_enemy_collision(game, game->y, game->x + 1);
 		if (game->map[game->y][game->x + 1] != '1'
 		&& game->map[game->y][game->x + 1] != 'E')
 		{
@@ -88,6 +91,7 @@ void	move_a_bonus(t_game *game)
 {
 	if (game->x > 0)
 	{
+		check_enemy_collision(game, game->y, game->x - 1);
 		if (game->map[game->y][game->x - 1] != '1'
 		&& game->map[game->y][game->x - 1] != 'E')
 		{

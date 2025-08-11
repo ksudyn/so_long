@@ -6,7 +6,7 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 15:24:59 by ksudyn            #+#    #+#              #
-#    Updated: 2025/08/08 17:10:34 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/08/11 18:12:51 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ MANDATORY_SRCS = \
 
 # Solo bonus
 BONUS_SRCS = \
+	bonus/dead.c\
 	bonus/main_bonus.c \
 	bonus/map_bonus.c \
 	bonus/move_bonus.c \
