@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 18:02:18 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/11 18:09:52 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/11/21 16:38:49 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	dead(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
 	ft_free_img(game->mlx, &game->images);
-    ft_free_img_bonus(game->mlx, &game->images);
+	ft_free_img_bonus(game->mlx, &game->images);
 	ft_free_map(game->map);
 	ft_putstr_fd("YOU DEAD.\n", 1);
 	exit(EXIT_FAILURE);

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:29:02 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/08/11 18:12:30 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/11/21 16:39:10 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	ft_press_key_bonus(int keycode, t_game *game)
 		close_game_bonus(game);
 	else if (keycode == W && game->finish == 0)
 	{
-		game->player_texture =  game->images.player_up;
+		game->player_texture = game->images.player_up;
 		move_w_bonus(game);
 	}
 	else if (keycode == S && game->finish == 0)
